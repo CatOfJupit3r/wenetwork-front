@@ -1,7 +1,7 @@
 # client/Dockerfile
 FROM node:18-alpine
 
-ARG VITE_APP_BACKEND_URL
+ARG VITE_BACKEND_URL
 
 WORKDIR /app
 
@@ -15,7 +15,7 @@ COPY . .
 # Build the app
 RUN npm run build
 
-ENV VITE_APP_BACKEND_URL=$VITE_APP_BACKEND_URL
+ENV VITE_BACKEND_URL=$VITE_BACKEND_URL
 
 EXPOSE 4173
 # Use preview instead of build for production
